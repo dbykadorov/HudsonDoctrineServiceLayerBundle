@@ -1,0 +1,27 @@
+{
+    "name": "hudson/doctrine-service-layer",
+    "type": "symfony-bundle",
+    "description": "Doctrine service layer implementation",
+    "keywords": ["doctrine2", "service layer"],
+    "homepage": "http://hudson.su",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Bykadorov",
+            "email": "dmitry.bykadorov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "autoload": {
+        "psr-0": { "Hudson\\Bundle\\DoctrineServiceLayerBundle": "" }
+    },
+    "target-dir": "Hudson/Bundle/DoctrineServiceLayerBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
