@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container
+    xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+
+    <!--
+    <parameters>
+        <parameter key="hudson_doctrine_service_layer.example.class">Hudson\Bundle\DoctrineServiceLayerBundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="hudson_doctrine_service_layer.example" class="%hudson_doctrine_service_layer.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+</container>
