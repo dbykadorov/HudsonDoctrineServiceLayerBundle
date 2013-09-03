@@ -9,9 +9,13 @@
 
 namespace Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager;
 
+use Doctrine\Bundle\DoctrineBundle\Registry;
+use Doctrine\ORM\EntityManager;
+use Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter;
 use Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager\ManagerInterface;
 use Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager\Exception\ModelManagerException;
 use Symfony\Component\DependencyInjection\Container;
+use Doctrine\ORM\Query\Filter\SQLFilter;
 
 /**
  * AbstractManager
@@ -271,5 +275,39 @@ abstract class AbstractManager implements ManagerInterface
     public function findOneBy(array $criteria)
     {
         return $this->entityRepository->findOneBy($criteria);
+    }
+
+    /**
+     * Disable softdeleteable filter for this entity
+     *
+     */
+    public function disableSoftdeletableFilter()
+    {
+        /** @var $doctrine Registry */
+        $doctrine = $this->container->get("doctrine");
+        /** @var $entityManager EntityManager */
+        $entityManager = $doctrine->getManager();
+        /** @var $filter SoftDeleteableFilter */
+        $filter = $entityManager->getFilters()->enable("softdeleteable");
+
+        // Disable softdeletable filter
+        $filter->disableForEntity($this->getRepository()->getClassName());
+    }
+
+    /**
+     * Enable softdeleteable filter for this entity
+     *
+     */
+    public function enableSoftdeletableFilter()
+    {
+        /** @var $doctrine Registry */
+        $doctrine = $this->container->get("doctrine");
+        /** @var $entityManager EntityManager */
+        $entityManager = $doctrine->getManager();
+        /** @var $filter SoftDeleteableFilter */
+        $filter = $entityManager->getFilters()->enable("softdeleteable");
+
+        // Enable softdeletable filter
+        $filter->enableForEntity($this->getRepository()->getClassName());
     }
 }
