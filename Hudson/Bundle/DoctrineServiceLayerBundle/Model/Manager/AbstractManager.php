@@ -295,7 +295,7 @@ abstract class AbstractManager implements ManagerInterface
     }
 
     /**
-     * Enable softdeleteable filter for this entity
+     * Enable softdeleteable filter for this entity // todo
      *
      */
     public function enableSoftdeletableFilter()
@@ -309,5 +309,21 @@ abstract class AbstractManager implements ManagerInterface
 
         // Enable softdeletable filter
         $filter->enableForEntity($this->getRepository()->getClassName());
+    }
+
+    /**
+     * Disable softdeleteable listener // todo
+     */
+    public function disableSoftdeletableListener()
+    {
+        $em = $this->entityManager->getEventManager();
+
+        foreach ($em->getListeners() as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                if ($listener instanceof SoftDeleteableListener) {
+                    $em->removeEventListener($event, $listener);
+                }
+            }
+        }
     }
 }
