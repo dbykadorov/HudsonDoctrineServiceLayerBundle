@@ -1,0 +1,6 @@
+{
+    "name": "hudson/doctrine-service-layer-bundle",
+    "require": {
+        "php": ">=5.3.3"
+    }
+}
