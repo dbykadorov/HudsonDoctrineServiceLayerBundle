@@ -1,6 +1,1 @@
-{
-    "name": "hudson/doctrine-service-layer-bundle",
-    "require": {
-        "php": ">=5.3.3"
-    }
-}
+{    "name": "hudson/doctrine-service-layer-bundle",    "type": "symfony-bundle",    "description": "Doctrine service layer bundle",    "keywords": ["doctrine", "service layer"],    "license": "MIT",    "authors": [        {            "name": "Dmitry Bykadorov",            "email": "dmitry.bykadorov@gmail.com"        }    ],    "require": {        "php": ">=5.3.3"    },    "target-dir": "",    "autoload": {        "psr-0": { "Hudson\\Bundle\\DoctrineServiceLayerBundle\\": "" }    }}
