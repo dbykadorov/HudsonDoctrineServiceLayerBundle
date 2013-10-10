@@ -12,6 +12,7 @@ namespace Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager;
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\ORM\EntityManager;
 use Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter;
+use Gedmo\SoftDeleteable\SoftDeleteableListener;
 use Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager\ManagerInterface;
 use Hudson\Bundle\DoctrineServiceLayerBundle\Model\Manager\Exception\ModelManagerException;
 use Symfony\Component\DependencyInjection\Container;
