@@ -243,7 +243,7 @@ abstract class AbstractManager implements ManagerInterface
      *
      * @return object The entity.
      */
-    public function find($id, $lockMode = \Doctrine\DBAL\LockMode::NONE, $lockVersion = null)
+    public function find($id, $lockMode = null, $lockVersion = null)
     {
         return $this->entityRepository->find($id, $lockMode, $lockVersion);
     }
